@@ -3,6 +3,8 @@ package org.example;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Field;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CellTest {
@@ -40,6 +42,24 @@ public class CellTest {
 
         // Assert
         assertTrue(actual);
+    }
+
+    // Using reflections to change cell state to alive
+    @Test
+    @DisplayName("Test alive cell state with 1 alive neighbour changes to dead state")
+    public void testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse() throws NoSuchFieldException, IllegalAccessException {
+        // Arrange
+        Cell cell = new Cell();
+        Field aliveField = Cell.class.getDeclaredField("isAlive");
+        aliveField.setAccessible(true);
+        aliveField.set(cell, true);
+
+        // Act
+        cell.decideState(1);
+        boolean actual = cell.isAlive();
+
+        // Assert
+        assertFalse(actual);
     }
 
     @Test

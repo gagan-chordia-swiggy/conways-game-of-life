@@ -12,9 +12,13 @@ public class Cell {
     }
 
     public void decideState(int aliveNeighbours) {
-        if (!this.isAlive) {
+        if (!this.isAlive()) {
             if (aliveNeighbours == 3) {
                 this.isAlive = true;
+            }
+        } else {
+            if (aliveNeighbours == 1) {
+                this.isAlive = false;
             }
         }
     }
