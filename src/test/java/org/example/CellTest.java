@@ -8,6 +8,7 @@ import java.lang.reflect.Field;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CellTest {
@@ -114,6 +115,16 @@ public class CellTest {
 
         // Assert
         assertFalse(actual);
+    }
+
+    @Test
+    @DisplayName("Test when a cell decision to change with negative number of alive cells should throw error")
+    void testForNegativeAliveCellsForChangingStateOfCurrentCellThrowsException() {
+        // Arrange
+        Cell cell = new Cell();
+
+        // Assert
+        assertThrows(RuntimeException.class, () -> cell.decideState(-1));
     }
 
     @Test

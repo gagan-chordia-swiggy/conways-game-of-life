@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="28. Added test for alive cell value is a '*' with its implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,33 +49,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.BoardTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BoardTest.testBoardWithNegative1RowThrowsException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BoardTest.testSeedRandomPopulation.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CellTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CellTest.testCellIsCreated.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CellTest.testDeadCellValueIsHyphen.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CellTest.testLiveCellValueIsStar.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GameTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GameTest.testGameIsNotNull.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GameTest.testGameWithNoBoardThrowsException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'org.example'.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.BoardTest.executor": "Run",
+    "Gradle.BoardTest.testBoardWithNegative1RowThrowsException.executor": "Run",
+    "Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor": "Run",
+    "Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor": "Run",
+    "Gradle.BoardTest.testSeedRandomPopulation.executor": "Run",
+    "Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException.executor": "Run",
+    "Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException.executor": "Run",
+    "Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException.executor": "Run",
+    "Gradle.CellTest.executor": "Run",
+    "Gradle.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse.executor": "Run",
+    "Gradle.CellTest.testAliveCellValueIsStar.executor": "Run",
+    "Gradle.CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse.executor": "Run",
+    "Gradle.CellTest.testCellIsCreated.executor": "Run",
+    "Gradle.CellTest.testDeadCellValueIsHyphen.executor": "Run",
+    "Gradle.CellTest.testLiveCellValueIsStar.executor": "Run",
+    "Gradle.CellTest.testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue.executor": "Run",
+    "Gradle.GameTest.executor": "Run",
+    "Gradle.GameTest.testGameIsNotNull.executor": "Run",
+    "Gradle.GameTest.testGameWithNoBoardThrowsException.executor": "Run",
+    "Gradle.Tests in 'org.example'.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
-}</component>
-  <component name="RunManager" selected="Gradle.Tests in 'org.example'">
-    <configuration name="BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+}]]></component>
+  <component name="RunManager" selected="Gradle.CellTest">
+    <configuration name="CellTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -88,7 +92,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException&quot;" />
+            <option value="&quot;org.example.CellTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -99,12 +103,12 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" value="--scan" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -112,7 +116,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.GameTest&quot;" />
+            <option value="&quot;org.example.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -123,7 +127,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameTest.testGameIsNotNull" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CellTest.testAliveCellValueIsStar" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -136,7 +140,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.GameTest.testGameIsNotNull&quot;" />
+            <option value="&quot;org.example.CellTest.testAliveCellValueIsStar&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -147,7 +151,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameTest.testGameWithNoBoardThrowsException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -160,7 +164,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.GameTest.testGameWithNoBoardThrowsException&quot;" />
+            <option value="&quot;org.example.CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -171,7 +175,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'org.example'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CellTest.testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -184,7 +188,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.*&quot;" />
+            <option value="&quot;org.example.CellTest.testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -197,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'org.example'" />
-        <item itemvalue="Gradle.GameTest" />
-        <item itemvalue="Gradle.GameTest.testGameWithNoBoardThrowsException" />
-        <item itemvalue="Gradle.GameTest.testGameIsNotNull" />
-        <item itemvalue="Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException" />
+        <item itemvalue="Gradle.CellTest" />
+        <item itemvalue="Gradle.CellTest.testAliveCellValueIsStar" />
+        <item itemvalue="Gradle.CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse" />
+        <item itemvalue="Gradle.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse" />
+        <item itemvalue="Gradle.CellTest.testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue" />
       </list>
     </recent_temporary>
   </component>
@@ -221,6 +225,63 @@
       <option name="presentableId" value="Default" />
       <updated>1706166482939</updated>
     </task>
+    <task id="LOCAL-00001" summary="22. Removed seed population method from Board class.&#10;&#10;Shifted to backlogs till refactoring for cellular automata is completed">
+      <option name="closed" value="true" />
+      <created>1706263216994</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706263216994</updated>
+    </task>
+    <task id="LOCAL-00002" summary="23. Added test for dead cell with 3 neighbours must change state to alive with implementation">
+      <option name="closed" value="true" />
+      <created>1706263292837</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706263292837</updated>
+    </task>
+    <task id="LOCAL-00003" summary="24. Added test for alive cell with 1 neighbour must change state to dead with its implementation">
+      <option name="closed" value="true" />
+      <created>1706264494766</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706264494766</updated>
+    </task>
+    <task id="LOCAL-00004" summary="25. Added test for alive cell with 0 neighbours must change state to dead with its implementation">
+      <option name="closed" value="true" />
+      <created>1706265231070</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706265231070</updated>
+    </task>
+    <task id="LOCAL-00005" summary="26. Added test for alive cell with 4 neighbours must change state to dead with its implementation">
+      <option name="closed" value="true" />
+      <created>1706265345303</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706265345303</updated>
+    </task>
+    <task id="LOCAL-00006" summary="27. Added test for alive cell with 10 neighbours must change state to dead with its implementation">
+      <option name="closed" value="true" />
+      <created>1706265401111</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706265401111</updated>
+    </task>
+    <task id="LOCAL-00007" summary="28. Added test for alive cell value is a '*' with its implementation">
+      <option name="closed" value="true" />
+      <created>1706265639447</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706265639447</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,5 +294,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="22. Removed seed population method from Board class.&#10;&#10;Shifted to backlogs till refactoring for cellular automata is completed" />
+    <MESSAGE value="23. Added test for dead cell with 3 neighbours must change state to alive with implementation" />
+    <MESSAGE value="24. Added test for alive cell with 1 neighbour must change state to dead with its implementation" />
+    <MESSAGE value="25. Added test for alive cell with 0 neighbours must change state to dead with its implementation" />
+    <MESSAGE value="26. Added test for alive cell with 4 neighbours must change state to dead with its implementation" />
+    <MESSAGE value="27. Added test for alive cell with 10 neighbours must change state to dead with its implementation" />
+    <MESSAGE value="28. Added test for alive cell value is a '*' with its implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="28. Added test for alive cell value is a '*' with its implementation" />
   </component>
 </project>

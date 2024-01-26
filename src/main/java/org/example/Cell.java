@@ -12,6 +12,9 @@ public class Cell {
     }
 
     public void decideState(int aliveNeighbours) {
+        if (aliveNeighbours < 0) {
+            throw new RuntimeException("Negative alive cells");
+        }
         if (!this.isAlive()) {
             if (aliveNeighbours == 3) {
                 this.isAlive = true;
