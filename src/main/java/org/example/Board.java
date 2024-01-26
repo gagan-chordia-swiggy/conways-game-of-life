@@ -13,4 +13,17 @@ public class Board {
         this.columns = columns;
         this.cells = new Cell[rows][columns];
     }
+
+    public void display() {
+        for (int ii = 0; ii < rows; ii++) {
+            for (int jj = 0; jj < columns; jj++) {
+                System.out.print(" | " + cells[ii][jj].toString() + " | ");
+            }
+            System.out.println();
+        }
+    }
+
+    public Cell[][] cells() {
+        return this.cells;
+    }
 }
