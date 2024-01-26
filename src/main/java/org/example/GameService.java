@@ -1,9 +1,9 @@
 package org.example;
 
-public class Game {
+public class GameService {
     private final Board board;
 
-    public Game(Board board) {
+    public GameService(Board board) {
         if (board == null) {
             throw new NullPointerException("Game board hasn't been initialized");
         }
