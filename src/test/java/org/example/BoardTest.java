@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BoardTest {
     @Test
@@ -14,5 +15,12 @@ public class BoardTest {
 
         // Assert
         assertNotNull(board);
+    }
+
+    @Test
+    @DisplayName("Test board with 0 rows throws error")
+    void testBoardWithZeroRowsThrowsException() {
+        // Assert
+        assertThrows(IllegalArgumentException.class, () -> new Board(0, 12));
     }
 }
