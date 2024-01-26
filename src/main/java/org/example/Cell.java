@@ -11,6 +11,14 @@ public class Cell {
         return this.isAlive;
     }
 
+    public void decideState(int aliveNeighbours) {
+        if (!this.isAlive) {
+            if (aliveNeighbours == 3) {
+                this.isAlive = true;
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return this.isAlive ? "*" : "-";

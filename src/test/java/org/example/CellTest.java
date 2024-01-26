@@ -3,9 +3,7 @@ package org.example;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CellTest {
     @Test
@@ -28,6 +26,20 @@ public class CellTest {
 
         // Assert
         assertFalse(cell.isAlive());
+    }
+
+    @Test
+    @DisplayName("Test cell state has modified to alive with exactly 3 neighbours around")
+    void testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue() {
+        // Arrange
+        Cell cell = new Cell();
+
+        // Act
+        cell.decideState(3);
+        boolean actual = cell.isAlive();
+
+        // Assert
+        assertTrue(actual);
     }
 
     @Test
