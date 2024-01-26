@@ -6,7 +6,7 @@ public class Board {
     private Cell[][] cells;
 
     public Board(int rows, int columns) {
-        if (rows < 1 || columns == 0) {
+        if (rows < 1 || columns < 1) {
             throw new IllegalArgumentException("Invalid board size");
         }
         this.rows = rows;

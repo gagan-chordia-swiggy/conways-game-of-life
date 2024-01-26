@@ -33,7 +33,7 @@ public class BoardTest {
 
     @Test
     @DisplayName("Test board with -10 rows throws error")
-    void testBoardWithNegative10RowThrowsException() {
+    void testBoardWithNegative10RowsThrowsException() {
         // Assert
         assertThrows(IllegalArgumentException.class, () -> new Board(-10, 12));
     }
@@ -43,5 +43,19 @@ public class BoardTest {
     void testBoardWithZeroColumnsThrowsException() {
         // Assert
         assertThrows(IllegalArgumentException.class, () -> new Board(1, 0));
+    }
+
+    @Test
+    @DisplayName("Test board with -1 column throws error")
+    void testBoardWithNegative1ColumnThrowsException() {
+        // Assert
+        assertThrows(IllegalArgumentException.class, () -> new Board(4, -1));
+    }
+
+    @Test
+    @DisplayName("Test board with -10 columns throws error")
+    void testBoardWithNegative10ColumnsThrowsException() {
+        // Assert
+        assertThrows(IllegalArgumentException.class, () -> new Board(10, -10));
     }
 }
