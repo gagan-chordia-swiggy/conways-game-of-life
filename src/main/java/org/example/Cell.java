@@ -17,7 +17,7 @@ public class Cell {
                 this.isAlive = true;
             }
         } else {
-            if (aliveNeighbours < 2) {
+            if (aliveNeighbours < 2 || aliveNeighbours == 4) {
                 this.isAlive = false;
             }
         }

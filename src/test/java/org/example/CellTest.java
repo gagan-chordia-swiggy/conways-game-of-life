@@ -80,6 +80,23 @@ public class CellTest {
     }
 
     @Test
+    @DisplayName("Test alive cell state with 4 alive neighbours changes to dead state")
+    void testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse() throws NoSuchFieldException, IllegalAccessException {
+        // Arrange
+        Cell cell = new Cell();
+        Field aliveField = Cell.class.getDeclaredField("isAlive");
+        aliveField.setAccessible(true);
+        aliveField.set(cell, true);
+
+        // Act
+        cell.decideState(4);
+        boolean actual = cell.isAlive();
+
+        // Assert
+        assertFalse(actual);
+    }
+
+    @Test
     @DisplayName("Test dead cell should return -")
     void testDeadCellValueIsHyphen() {
         // Arrange
