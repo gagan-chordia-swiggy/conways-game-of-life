@@ -36,6 +36,9 @@ public class Board {
     }
 
     public void seedRandomPopulation(double seedPercentage) {
+        if (seedPercentage == 0) {
+            throw new RuntimeException("No cells can be seeded");
+        }
         Random random = new Random();
 
         for (int ii = 0; ii < rows; ii++) {

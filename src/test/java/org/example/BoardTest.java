@@ -82,4 +82,15 @@ public class BoardTest {
 
         assertTrue(Math.abs(actualPercentage - seedPercentage) < 0.1);
     }
+
+    @Test
+    @DisplayName("Seeding cells with zero seed percent")
+    void testSeedingCellsWithZeroSeedPercentRateShouldThrowException() {
+        // Arrange
+        Board board = new Board(12, 12);
+        double seedPercentage = 0.0;
+
+        // Assert
+        assertThrows(RuntimeException.class, () -> board.seedRandomPopulation(seedPercentage));
+    }
 }
