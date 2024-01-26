@@ -93,4 +93,26 @@ public class BoardTest {
         // Assert
         assertThrows(RuntimeException.class, () -> board.seedRandomPopulation(seedPercentage));
     }
+
+    @Test
+    @DisplayName("Seeding cells with -0.05 seed percent")
+    void testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException() {
+        // Arrange
+        Board board = new Board(12, 12);
+        double seedPercentage = -0.05;
+
+        // Assert
+        assertThrows(RuntimeException.class, () -> board.seedRandomPopulation(seedPercentage));
+    }
+
+    @Test
+    @DisplayName("Seeding cells with -1 seed percent")
+    void testSeedingCellsWithNegative1SeedPercentRateShouldThrowException() {
+        // Arrange
+        Board board = new Board(12, 12);
+        double seedPercentage = -1;
+
+        // Assert
+        assertThrows(RuntimeException.class, () -> board.seedRandomPopulation(seedPercentage));
+    }
 }

@@ -5,7 +5,7 @@ import java.util.Random;
 public class Board {
     private final int rows;
     private final int columns;
-    private Cell[][] cells;
+    private final Cell[][] cells;
 
     public Board(int rows, int columns) {
         if (rows < 1 || columns < 1) {
@@ -36,7 +36,7 @@ public class Board {
     }
 
     public void seedRandomPopulation(double seedPercentage) {
-        if (seedPercentage == 0) {
+        if (seedPercentage <= 0) {
             throw new RuntimeException("No cells can be seeded");
         }
         Random random = new Random();

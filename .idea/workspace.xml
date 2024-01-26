@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/BoardTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,11 +53,14 @@
     "Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor": "Run",
     "Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor": "Run",
     "Gradle.BoardTest.testSeedRandomPopulation.executor": "Run",
+    "Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException.executor": "Run",
+    "Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException.executor": "Run",
     "Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException.executor": "Run",
     "Gradle.CellTest.executor": "Run",
     "Gradle.CellTest.testCellIsCreated.executor": "Run",
     "Gradle.CellTest.testDeadCellValueIsHyphen.executor": "Run",
     "Gradle.CellTest.testLiveCellValueIsStar.executor": "Run",
+    "Gradle.Tests in 'org.example'.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -68,7 +68,7 @@
     "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException">
+  <component name="RunManager" selected="Gradle.Tests in 'org.example'">
     <configuration name="BoardTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -93,7 +93,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="BoardTest.testBoardWithNegative1RowThrowsException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -106,7 +106,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.BoardTest.testBoardWithNegative1RowThrowsException&quot;" />
+            <option value="&quot;org.example.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -117,7 +117,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="BoardTest.testBoardWithZeroColumnsThrowsException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -130,31 +130,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.BoardTest.testBoardWithZeroColumnsThrowsException&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BoardTest.testSeedRandomPopulation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.BoardTest.testSeedRandomPopulation&quot;" />
+            <option value="&quot;org.example.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -189,13 +165,37 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Tests in 'org.example'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException" />
-        <item itemvalue="Gradle.BoardTest.testSeedRandomPopulation" />
+        <item itemvalue="Gradle.Tests in 'org.example'" />
+        <item itemvalue="Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException" />
         <item itemvalue="Gradle.BoardTest" />
-        <item itemvalue="Gradle.BoardTest.testBoardWithZeroColumnsThrowsException" />
-        <item itemvalue="Gradle.BoardTest.testBoardWithNegative1RowThrowsException" />
+        <item itemvalue="Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException" />
+        <item itemvalue="Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException" />
       </list>
     </recent_temporary>
   </component>
