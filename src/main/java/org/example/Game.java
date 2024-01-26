@@ -9,4 +9,8 @@ public class Game {
         }
         this.board = board;
     }
+
+    public void displayBoard() {
+        board.display();
+    }
 }
