@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/BoardTest.java" afterDir="false" />
     </list>
@@ -53,7 +54,9 @@
   "keyToString": {
     "Gradle.BoardTest.executor": "Run",
     "Gradle.BoardTest.testBoardWithNegative1RowThrowsException.executor": "Run",
+    "Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor": "Run",
     "Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor": "Run",
+    "Gradle.BoardTest.testSeedRandomPopulation.executor": "Run",
     "Gradle.CellTest.executor": "Run",
     "Gradle.CellTest.testCellIsCreated.executor": "Run",
     "Gradle.CellTest.testDeadCellValueIsHyphen.executor": "Run",
@@ -114,6 +117,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="BoardTest.testBoardWithZeroColumnsThrowsException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.BoardTest.testBoardWithZeroColumnsThrowsException&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="BoardTest.testBoardWithZeroRowsThrowsException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -138,7 +165,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CellTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardTest.testSeedRandomPopulation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -151,31 +178,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.CellTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="CellTest.testLiveCellValueIsStar" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.CellTest.testLiveCellValueIsStar&quot;" />
+            <option value="&quot;org.example.BoardTest.testSeedRandomPopulation&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -189,10 +192,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.BoardTest" />
+        <item itemvalue="Gradle.BoardTest.testSeedRandomPopulation" />
+        <item itemvalue="Gradle.BoardTest.testBoardWithZeroColumnsThrowsException" />
         <item itemvalue="Gradle.BoardTest.testBoardWithNegative1RowThrowsException" />
         <item itemvalue="Gradle.BoardTest.testBoardWithZeroRowsThrowsException" />
-        <item itemvalue="Gradle.CellTest" />
-        <item itemvalue="Gradle.CellTest.testLiveCellValueIsStar" />
       </list>
     </recent_temporary>
   </component>

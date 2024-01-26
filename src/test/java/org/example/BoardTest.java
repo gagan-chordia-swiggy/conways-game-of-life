@@ -3,8 +3,7 @@ package org.example;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BoardTest {
     @Test
@@ -57,5 +56,30 @@ public class BoardTest {
     void testBoardWithNegative10ColumnsThrowsException() {
         // Assert
         assertThrows(IllegalArgumentException.class, () -> new Board(10, -10));
+    }
+
+    @Test
+    @DisplayName("Test seeding random population of cells")
+    void testSeedRandomPopulation() {
+        // Arrange
+        Board board = new Board(10, 10);
+        double seedPercentage = 0.7;
+        int alive = 0;
+        int totalCells = board.cells().length * board.cells()[0].length;
+
+        // Act
+        board.seedRandomPopulation(seedPercentage);
+
+        for (int ii = 0; ii < board.cells().length; ii++) {
+            for (int jj = 0; jj < board.cells()[0].length; jj++) {
+                if(board.cells()[ii][jj].isAlive()) {
+                    ++alive;
+                }
+            }
+        }
+
+        double actualPercentage = (double) alive / totalCells;
+
+        assertTrue(Math.abs(actualPercentage - seedPercentage) < 0.1);
     }
 }
