@@ -47,7 +47,7 @@ public class CellTest {
     // Using reflections to change cell state to alive
     @Test
     @DisplayName("Test alive cell state with 1 alive neighbour changes to dead state")
-    public void testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse() throws NoSuchFieldException, IllegalAccessException {
+    void testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse() throws NoSuchFieldException, IllegalAccessException {
         // Arrange
         Cell cell = new Cell();
         Field aliveField = Cell.class.getDeclaredField("isAlive");
@@ -56,6 +56,23 @@ public class CellTest {
 
         // Act
         cell.decideState(1);
+        boolean actual = cell.isAlive();
+
+        // Assert
+        assertFalse(actual);
+    }
+
+    @Test
+    @DisplayName("Test alive cell state with 0 alive neighbours changes to dead state")
+    void testAliveCellWithZeroAliveNeighborsChangesToDeadStateAndReturnsFalse() throws NoSuchFieldException, IllegalAccessException {
+        // Arrange
+        Cell cell = new Cell();
+        Field aliveField = Cell.class.getDeclaredField("isAlive");
+        aliveField.setAccessible(true);
+        aliveField.set(cell, true);
+
+        // Act
+        cell.decideState(0);
         boolean actual = cell.isAlive();
 
         // Assert
