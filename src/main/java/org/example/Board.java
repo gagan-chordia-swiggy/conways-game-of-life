@@ -34,18 +34,4 @@ public class Board {
     public Cell[][] cells() {
         return this.cells;
     }
-
-    public void seedRandomPopulation(double seedPercentage) {
-        if (seedPercentage <= 0) {
-            throw new RuntimeException("No cells can be seeded");
-        }
-        Random random = new Random();
-
-        for (int ii = 0; ii < rows; ii++) {
-            for (int jj = 0; jj < columns; jj++) {
-                double seed = random.nextDouble();
-                cells[ii][jj].setAlive(seed <= seedPercentage);
-            }
-        }
-    }
 }
