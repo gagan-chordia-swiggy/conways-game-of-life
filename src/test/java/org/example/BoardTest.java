@@ -37,4 +37,11 @@ public class BoardTest {
         // Assert
         assertThrows(IllegalArgumentException.class, () -> new Board(-10, 12));
     }
+
+    @Test
+    @DisplayName("Test board with 0 columns throws error")
+    void testBoardWithZeroColumnsThrowsException() {
+        // Assert
+        assertThrows(IllegalArgumentException.class, () -> new Board(1, 0));
+    }
 }
