@@ -40,4 +40,17 @@ public class CellTest {
         // Assert
         assertFalse(cell.isAlive());
     }
+
+    @Test
+    @DisplayName("Test dead cell should return -")
+    void testDeadCellValueIsHyphen() {
+        // Arrange
+        Cell cell = new Cell();
+
+        // Act
+        String actual = cell.toString();
+
+        // Assert
+        assertEquals("-", actual);
+    }
 }
