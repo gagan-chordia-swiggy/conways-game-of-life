@@ -141,7 +141,7 @@ public class CellTest {
     }
 
     @Test
-    @DisplayName(value = "Test alive cell should return *")
+    @DisplayName("Test alive cell should return *")
     void testAliveCellValueIsStar() throws NoSuchFieldException, IllegalAccessException {
         // Arrange
         Cell cell = new Cell();
@@ -154,5 +154,34 @@ public class CellTest {
 
         // Assert
         assertEquals("*", actual);
+    }
+
+    @Test
+    @DisplayName("Test Create a live cell")
+    void testCreateLiveCell() {
+        // Arrange
+        Cell cell = Cell.createAliveCell();
+
+        // Act
+        boolean actual = cell.isAlive();
+
+        // Assert
+        assertTrue(actual);
+    }
+
+    @Test
+    @DisplayName("Test create live cell doesn't affect other cells")
+    void testCreateLiveCellDoesNotAffectOtherCells() {
+        // Arrange
+        Cell cell1 = new Cell();
+        Cell cell2 = new Cell();
+        Cell cell3 = Cell.createAliveCell();
+
+        // Act
+
+        // Assert
+        assertFalse(cell1.isAlive());
+        assertFalse(cell2.isAlive());
+        assertTrue(cell3.isAlive());
     }
 }

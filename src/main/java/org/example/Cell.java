@@ -26,6 +26,12 @@ public class Cell {
         }
     }
 
+    public static Cell createAliveCell() {
+        Cell cell = new Cell();
+        cell.isAlive = true;
+        return cell;
+    }
+
     @Override
     public String toString() {
         return this.isAlive ? "*" : "-";
