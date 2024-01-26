@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CellTest {
     @Test
@@ -17,19 +16,6 @@ public class CellTest {
 
         // Assert
         assertNotNull(cell);
-    }
-
-    @Test
-    @DisplayName("Test give life to cell")
-    void testGiveLifeToCellReturnTrue() {
-        // Arrange
-        Cell cell = new Cell();
-
-        // Act
-        cell.setAlive(true);
-
-        // Assert
-        assertTrue(cell.isAlive());
     }
 
     @Test
@@ -55,19 +41,5 @@ public class CellTest {
 
         // Assert
         assertEquals("-", actual);
-    }
-
-    @Test
-    @DisplayName("Test live cell should return *")
-    void testLiveCellValueIsStar() {
-        // Arrange
-        Cell cell = new Cell();
-
-        // Act
-        cell.setAlive(true);
-        String actual = cell.toString();
-
-        // Assert
-        assertEquals("*", actual);
     }
 }

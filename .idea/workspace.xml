@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameOfLife.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/GameOfLifeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,31 +49,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.BoardTest.executor": "Run",
-    "Gradle.BoardTest.testBoardWithNegative1RowThrowsException.executor": "Run",
-    "Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor": "Run",
-    "Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor": "Run",
-    "Gradle.BoardTest.testSeedRandomPopulation.executor": "Run",
-    "Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException.executor": "Run",
-    "Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException.executor": "Run",
-    "Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException.executor": "Run",
-    "Gradle.CellTest.executor": "Run",
-    "Gradle.CellTest.testCellIsCreated.executor": "Run",
-    "Gradle.CellTest.testDeadCellValueIsHyphen.executor": "Run",
-    "Gradle.CellTest.testLiveCellValueIsStar.executor": "Run",
-    "Gradle.GameTest.executor": "Run",
-    "Gradle.GameTest.testGameIsNotNull.executor": "Run",
-    "Gradle.GameTest.testGameWithNoBoardThrowsException.executor": "Run",
-    "Gradle.Tests in 'org.example'.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.BoardTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testBoardWithNegative1RowThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testSeedRandomPopulation.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testCellIsCreated.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testDeadCellValueIsHyphen.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testLiveCellValueIsStar.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameTest.testGameIsNotNull.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameTest.testGameWithNoBoardThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'org.example'.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.Tests in 'org.example'">
     <configuration name="BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
