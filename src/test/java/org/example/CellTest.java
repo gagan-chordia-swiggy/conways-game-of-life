@@ -28,4 +28,16 @@ public class CellTest {
         // Assert
         assertTrue(cell.isAlive());
     }
+
+    @Test
+    @DisplayName("Test check cell is dead")
+    void testCellIsDead() {
+        // Arrange
+        Cell cell = new Cell();
+
+        // Act
+
+        // Assert
+        assertFalse(cell.isAlive());
+    }
 }

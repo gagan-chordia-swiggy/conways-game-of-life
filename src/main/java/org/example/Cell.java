@@ -14,4 +14,9 @@ public class Cell {
     public boolean isAlive() {
         return this.isAlive;
     }
+
+    @Override
+    public String toString() {
+        return this.isAlive ? "*" : "-";
+    }
 }
