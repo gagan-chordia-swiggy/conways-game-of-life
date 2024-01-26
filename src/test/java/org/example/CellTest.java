@@ -3,7 +3,7 @@ package org.example;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CellTest {
     @Test
@@ -14,5 +14,18 @@ public class CellTest {
 
         // Assert
         assertNotNull(cell);
+    }
+
+    @Test
+    @DisplayName("Test give life to cell")
+    void testGiveLifeToCellReturnTrue() {
+        // Arrange
+        Cell cell = new Cell();
+
+        // Act
+        cell.setAlive(true);
+
+        // Assert
+        assertTrue(cell.isAlive());
     }
 }
