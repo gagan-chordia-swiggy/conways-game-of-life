@@ -23,4 +23,18 @@ public class BoardTest {
         // Assert
         assertThrows(IllegalArgumentException.class, () -> new Board(0, 12));
     }
+
+    @Test
+    @DisplayName("Test board with -1 rows throws error")
+    void testBoardWithNegative1RowThrowsException() {
+        // Assert
+        assertThrows(IllegalArgumentException.class, () -> new Board(-1, 12));
+    }
+
+    @Test
+    @DisplayName("Test board with -10 rows throws error")
+    void testBoardWithNegative10RowThrowsException() {
+        // Assert
+        assertThrows(IllegalArgumentException.class, () -> new Board(-10, 12));
+    }
 }
