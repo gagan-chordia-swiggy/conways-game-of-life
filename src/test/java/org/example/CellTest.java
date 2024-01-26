@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CellTest {
     @Test
@@ -124,5 +127,21 @@ public class CellTest {
 
         // Assert
         assertEquals("-", actual);
+    }
+
+    @Test
+    @DisplayName(value = "Test alive cell should return *")
+    void testAliveCellValueIsStar() throws NoSuchFieldException, IllegalAccessException {
+        // Arrange
+        Cell cell = new Cell();
+        Field aliveField = Cell.class.getDeclaredField("isAlive");
+        aliveField.setAccessible(true);
+        aliveField.set(cell, true);
+
+        // Act
+        String actual = cell.toString();
+
+        // Assert
+        assertEquals("*", actual);
     }
 }
