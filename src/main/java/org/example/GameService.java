@@ -1,16 +1,11 @@
 package org.example;
 
-public class GameService {
-    private final Board board;
-
-    public GameService(Board board) {
-        if (board == null) {
-            throw new NullPointerException("Game board hasn't been initialized");
-        }
-        this.board = board;
-    }
-
-    public void displayBoard() {
-        board.display();
+/**
+ * Conway's Game of Life
+ * Reference: <a href="https://pi.math.cornell.edu/~lipa/mec/lesson6.html#:~:text=For%20each%20generation%20of%20the,it%20has%203%20live%20neighbors">Rules of the game by Cornell University</a>
+ */
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
     }
 }
