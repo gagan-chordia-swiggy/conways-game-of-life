@@ -40,6 +40,10 @@ public class Board {
     }
 
     private void seedLiveCells(double seedPercent) {
+        if (seedPercent < 0) {
+            throw new RuntimeException("Seed percent cannot be less than zero");
+        }
+
         Random random = new Random();
 
         for (int ii = 0; ii < this.rows; ii++) {

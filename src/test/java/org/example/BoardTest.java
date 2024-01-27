@@ -86,4 +86,11 @@ public class BoardTest {
         // Assert
         assertFalse(actual);
     }
+
+    @Test
+    @DisplayName("Test when seed percent is less than zero should throw exception")
+    void testWhenSeedPercentLessThanZeroThrowsException() {
+        // Assert
+        assertThrows(RuntimeException.class, () -> new Board(12, 45, -2));
+    }
 }
