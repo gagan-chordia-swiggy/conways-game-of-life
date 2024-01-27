@@ -57,4 +57,17 @@ public class BoardTest {
         // Assert
         assertThrows(IllegalArgumentException.class, () -> new Board(10, -10, 0.9));
     }
+
+    @Test
+    @DisplayName("Test all cells are dead when seed percent is zero")
+    void testAllCellsAreDeadWhenSeedPercentIsZeroAndReturnTrue() {
+        // Arrange
+        Board board = new Board(12, 8, 0.0);
+
+        // Act
+        boolean actual = board.allCellsDead();
+
+        // Assert
+        assertTrue(actual);
+    }
 }

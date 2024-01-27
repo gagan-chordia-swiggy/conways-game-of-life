@@ -27,8 +27,16 @@ public class Board {
         }
     }
 
-    public Cell[][] cells() {
-        return this.cells;
+    public boolean allCellsDead() {
+        for (int ii = 0; ii < this.rows; ii++) {
+            for (int jj = 0; jj < this.columns; jj++) {
+                if (this.cells[ii][jj].isAlive()) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     private void seedLiveCells(double seedPercent) {

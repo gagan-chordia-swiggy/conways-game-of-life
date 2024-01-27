@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="28. Added test for alive cell value is a '*' with its implementation">
+    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="29. Added test for cell changing state with negative alive neighbours and its implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.BoardTest.executor": "Run",
+    "Gradle.BoardTest.executor": "Coverage",
     "Gradle.BoardTest.testBoardWithNegative1RowThrowsException.executor": "Run",
     "Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor": "Run",
     "Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor": "Run",
@@ -59,7 +58,7 @@
     "Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException.executor": "Run",
     "Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException.executor": "Run",
     "Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException.executor": "Run",
-    "Gradle.CellTest.executor": "Run",
+    "Gradle.CellTest.executor": "Coverage",
     "Gradle.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse.executor": "Run",
     "Gradle.CellTest.testAliveCellValueIsStar.executor": "Run",
     "Gradle.CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse.executor": "Run",
@@ -79,6 +78,30 @@
   }
 }]]></component>
   <component name="RunManager" selected="Gradle.CellTest">
+    <configuration name="BoardTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.BoardTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="CellTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -175,37 +198,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CellTest.testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.CellTest.testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.CellTest" />
+        <item itemvalue="Gradle.BoardTest" />
         <item itemvalue="Gradle.CellTest.testAliveCellValueIsStar" />
         <item itemvalue="Gradle.CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse" />
         <item itemvalue="Gradle.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse" />
-        <item itemvalue="Gradle.CellTest.testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue" />
       </list>
     </recent_temporary>
   </component>
