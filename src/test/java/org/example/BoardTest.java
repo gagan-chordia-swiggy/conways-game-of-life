@@ -3,7 +3,10 @@ package org.example;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BoardTest {
     @Test
@@ -69,5 +72,18 @@ public class BoardTest {
 
         // Assert
         assertTrue(actual);
+    }
+
+    @Test
+    @DisplayName("Test at least 1 cell is alive when seed percent is greater than zero")
+    void testAtLeast1CellIsAliveWhenSeedPercentIsGreaterThanZero() {
+        // Arrange
+        Board board = new Board(12, 8, 0.1);
+
+        // Act
+        boolean actual = board.allCellsDead();
+
+        // Assert
+        assertFalse(actual);
     }
 }
