@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="29. Added test for cell changing state with negative alive neighbours and its implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="29. Added test for cell changing state with negative alive neighbours and its implementation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +49,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.BoardTest.executor": "Coverage",
+    "Gradle.BoardTest.testAllCellsAreDeadWhenSeedPercentIsZeroAndReturnTrue.executor": "Run",
+    "Gradle.BoardTest.testAtLeast1CellIsAliveWhenSeedPercentIsNotZero.executor": "Run",
     "Gradle.BoardTest.testBoardWithNegative1RowThrowsException.executor": "Run",
     "Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor": "Run",
     "Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor": "Run",
@@ -58,6 +58,7 @@
     "Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException.executor": "Run",
     "Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException.executor": "Run",
     "Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException.executor": "Run",
+    "Gradle.BoardTest.testWhenSeedPercentLessThanZeroThrowsException.executor": "Run",
     "Gradle.CellTest.executor": "Coverage",
     "Gradle.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse.executor": "Run",
     "Gradle.CellTest.testAliveCellValueIsStar.executor": "Run",
@@ -69,7 +70,7 @@
     "Gradle.GameTest.executor": "Run",
     "Gradle.GameTest.testGameIsNotNull.executor": "Run",
     "Gradle.GameTest.testGameWithNoBoardThrowsException.executor": "Run",
-    "Gradle.Tests in 'org.example'.executor": "Run",
+    "Gradle.Tests in 'org.example'.executor": "Coverage",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -77,7 +78,7 @@
     "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.CellTest">
+  <component name="RunManager" selected="Gradle.Tests in 'org.example'">
     <configuration name="BoardTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -102,7 +103,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CellTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardTest.testAllCellsAreDeadWhenSeedPercentIsZeroAndReturnTrue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -115,7 +116,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.CellTest&quot;" />
+            <option value="&quot;org.example.BoardTest.testAllCellsAreDeadWhenSeedPercentIsZeroAndReturnTrue&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -126,31 +127,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--scan" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="CellTest.testAliveCellValueIsStar" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardTest.testAtLeast1CellIsAliveWhenSeedPercentIsNotZero" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -163,7 +140,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.CellTest.testAliveCellValueIsStar&quot;" />
+            <option value="&quot;org.example.BoardTest.testAtLeast1CellIsAliveWhenSeedPercentIsNotZero&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -174,7 +151,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardTest.testWhenSeedPercentLessThanZeroThrowsException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -187,7 +164,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse&quot;" />
+            <option value="&quot;org.example.BoardTest.testWhenSeedPercentLessThanZeroThrowsException&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'org.example'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.*&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -200,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CellTest" />
+        <item itemvalue="Gradle.Tests in 'org.example'" />
         <item itemvalue="Gradle.BoardTest" />
-        <item itemvalue="Gradle.CellTest.testAliveCellValueIsStar" />
-        <item itemvalue="Gradle.CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse" />
-        <item itemvalue="Gradle.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse" />
+        <item itemvalue="Gradle.BoardTest.testWhenSeedPercentLessThanZeroThrowsException" />
+        <item itemvalue="Gradle.BoardTest.testAtLeast1CellIsAliveWhenSeedPercentIsNotZero" />
+        <item itemvalue="Gradle.BoardTest.testAllCellsAreDeadWhenSeedPercentIsZeroAndReturnTrue" />
       </list>
     </recent_temporary>
   </component>
@@ -303,5 +304,10 @@
     <MESSAGE value="27. Added test for alive cell with 10 neighbours must change state to dead with its implementation" />
     <MESSAGE value="28. Added test for alive cell value is a '*' with its implementation" />
     <option name="LAST_COMMIT_MESSAGE" value="28. Added test for alive cell value is a '*' with its implementation" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/conways_game_of_life$CellTest.ic" NAME="CellTest Coverage Results" MODIFIED="1706344572752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/conways_game_of_life$Tests_in__org_example_.ic" NAME="Tests in 'org.example' Coverage Results" MODIFIED="1706361738570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/conways_game_of_life$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1706345651083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
