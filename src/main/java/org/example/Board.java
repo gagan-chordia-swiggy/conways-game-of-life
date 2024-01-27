@@ -35,7 +35,7 @@ public class Board {
                 }
             }
         }
-
+        System.out.println("All cells dead");
         return true;
     }
 
@@ -85,7 +85,7 @@ public class Board {
                     continue;
                 }
 
-                if (neighborRow >= 0 & neighborColumn < this.rows && neighborColumn >= 0 && neighborColumn < this.columns) {
+                if (neighborRow >= 0 & neighborRow < this.rows && neighborColumn >= 0 && neighborColumn < this.columns) {
                     if (this.cells[neighborRow][neighborColumn].isAlive()) {
                         ++liveNeighbours;
                     }
