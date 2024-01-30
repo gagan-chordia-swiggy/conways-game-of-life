@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.exceptions.InvalidDimensionException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,5 +13,17 @@ class BoardTest {
 
         // Assert
         assertNotNull(board);
+    }
+
+    @Test
+    void testBoardWithNegativeRowsThrowsException() {
+        // Assert
+        assertThrows(InvalidDimensionException.class, () -> new Board(-1, 2, 0.9));
+    }
+
+    @Test
+    void testBoardWithZeroRowsThrowsException() {
+        // Assert
+        assertThrows(InvalidDimensionException.class, () -> new Board(0, 2, 0.9));
     }
 }
