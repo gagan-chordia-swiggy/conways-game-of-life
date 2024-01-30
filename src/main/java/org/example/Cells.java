@@ -48,6 +48,18 @@ public class Cells {
         this.cells = nextCells;
     }
 
+    public boolean allCellsDead() {
+        for (int ii = 0; ii < this.rows; ii++) {
+            for (int jj = 0; jj < this.columns; jj++) {
+                if (this.cells[ii][jj].isAlive()) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
     private void seedCells(double seedPercent) {
         Random random = new Random();
 

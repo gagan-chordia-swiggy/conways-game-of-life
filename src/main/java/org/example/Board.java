@@ -17,4 +17,8 @@ public class Board {
     public void evolve() {
         this.cells.evolve();
     }
+
+    public boolean checkAllCellsDead() {
+        return this.cells.allCellsDead();
+    }
 }
