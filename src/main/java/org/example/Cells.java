@@ -10,7 +10,7 @@ public class Cells {
     private Cell[][] cells;
 
     public Cells(int rows, int columns, double seedPercent) {
-        if (rows < 1) {
+        if (rows < 1 || columns < 1) {
             throw new InvalidDimensionException();
         }
 

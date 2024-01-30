@@ -27,4 +27,16 @@ public class CellsTest {
         // Assert
         assertThrows(InvalidDimensionException.class, () -> new Cells(-4, 12, 0.9));
     }
+
+    @Test
+    void testZeroCellColumnThrowsException() {
+        // Assert
+        assertThrows(InvalidDimensionException.class, () -> new Cells(10, 0, 0.9));
+    }
+
+    @Test
+    void testNegativeCellColumnsThrowsException() {
+        // Assert
+        assertThrows(InvalidDimensionException.class, () -> new Cells(4, -12, 0.9));
+    }
 }
