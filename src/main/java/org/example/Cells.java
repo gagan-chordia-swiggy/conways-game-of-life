@@ -29,8 +29,9 @@ public class Cells {
     public void displayCells() {
         for (int ii = 0; ii < this.rows; ii++) {
             for (int jj = 0; jj < this.columns; jj++) {
-                System.out.println(" | " + this.cells[ii][jj].toString() + " | ");
+                System.out.print(" | " + this.cells[ii][jj].toString() + " | ");
             }
+            System.out.println();
         }
     }
 
@@ -57,6 +58,7 @@ public class Cells {
             }
         }
 
+        System.out.println("All cells are dead");
         return true;
     }
 
