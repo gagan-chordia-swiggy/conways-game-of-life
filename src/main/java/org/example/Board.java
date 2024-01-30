@@ -9,4 +9,12 @@ public class Board {
         double seedPercent = new Random().nextDouble(0.1, 1);
         this.cells = new Cells(rows, columns, seedPercent);
     }
+
+    public void displayBoard() {
+        this.cells.displayCells();
+    }
+
+    public void evolve() {
+        this.cells.evolve();
+    }
 }
