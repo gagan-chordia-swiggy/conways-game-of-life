@@ -35,4 +35,24 @@ public class Cells {
             }
         }
     }
+
+    private int countLiveNeighbours(int row, int column) {
+        int liveNeighbours = 0;
+
+        int[] neighbourRows = {-1, -1, -1, 0, 0, 1, 1, 1};
+        int[] neighbourColumns = {-1, 0, 1, -1, 1, -1, 0, 1};
+
+        for (int ii = 0; ii < neighbourColumns.length; ii++) {
+            int neighbourRow = row + neighbourRows[ii];
+            int neighbourColumn = column + neighbourColumns[ii];
+
+            if (neighbourRow >= 0 && neighbourRow < this.rows && neighbourColumn >= 0 && neighbourColumn < this.columns) {
+                if (this.cells[neighbourRow][neighbourColumn].isAlive()) {
+                    ++liveNeighbours;
+                }
+            }
+        }
+
+        return liveNeighbours;
+    }
 }
