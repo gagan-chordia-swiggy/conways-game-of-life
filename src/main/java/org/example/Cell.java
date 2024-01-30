@@ -24,4 +24,9 @@ public class Cell {
             isAlive = liveNeighbours == 3;
         }
     }
+
+    @Override
+    public String toString() {
+        return this.isAlive ? "*" : "-";
+    }
 }

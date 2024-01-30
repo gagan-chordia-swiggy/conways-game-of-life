@@ -140,4 +140,28 @@ class CellTest {
         // Assert
         assertThrows(InvalidLiveNeighboursException.class, () -> cell.determineState(-9));
     }
+
+    @Test
+    void testDeadCellHasValueHyphen() {
+        // Arrange
+        Cell cell = new Cell(false);
+
+        // Act
+        String actual = cell.toString();
+
+        // Assert
+        assertEquals("-", actual);
+    }
+
+    @Test
+    void testLiveCellHasValueStar() {
+        // Arrange
+        Cell cell = new Cell(true);
+
+        // Act
+        String actual = cell.toString();
+
+        // Assert
+        assertEquals("*", actual);
+    }
 }
