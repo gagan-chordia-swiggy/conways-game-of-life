@@ -10,4 +10,10 @@ public class Cell {
     public boolean isAlive() {
         return isAlive;
     }
+
+    public void determineState(int liveNeighbours) {
+        if (isAlive) {
+            isAlive = liveNeighbours == 2;
+        }
+    }
 }

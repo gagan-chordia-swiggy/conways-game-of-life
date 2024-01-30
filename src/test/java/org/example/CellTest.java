@@ -37,4 +37,17 @@ class CellTest {
         // Assert
         assertTrue(actual);
     }
+
+    @Test
+    void testLiveCellWithLessThan2NeighboursDies() {
+        // Arrange
+        Cell cell = new Cell(true);
+
+        // Act
+        cell.determineState(1);
+        boolean actual = cell.isAlive();
+
+        // Assert
+        assertFalse(actual);
+    }
 }
