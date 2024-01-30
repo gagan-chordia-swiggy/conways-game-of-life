@@ -26,4 +26,16 @@ class BoardTest {
         // Assert
         assertThrows(InvalidDimensionException.class, () -> new Board(0, 2, 0.9));
     }
+
+    @Test
+    void testBoardWithNegativeColumnsThrowsException() {
+        // Assert
+        assertThrows(InvalidDimensionException.class, () -> new Board(1, -2, 0.9));
+    }
+
+    @Test
+    void testBoardWithZeroColumnsThrowsException() {
+        // Assert
+        assertThrows(InvalidDimensionException.class, () -> new Board(9, 0, 0.9));
+    }
 }
