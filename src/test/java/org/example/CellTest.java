@@ -1,15 +1,12 @@
 package org.example;
 
-import org.example.exceptions.InvalidLocationException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
 
 public class CellTest {
     @Test
@@ -42,10 +39,35 @@ public class CellTest {
         Cell cell = new Cell(true);
 
         // Act
-        cell.alive(true);
         boolean actual = cell.isAlive();
 
         // Assert
         assertTrue(actual);
+    }
+
+    @Test
+    @DisplayName("Test alive cell has value of *")
+    void testAliveCellReturnsAStar() {
+        // Arrange
+        Cell cell = new Cell(true);
+
+        // Act
+        String actual = cell.toString();
+
+        // Assert
+        assertEquals("*", actual);
+    }
+
+    @Test
+    @DisplayName("Test dead cell has value of -")
+    void testDeadCellReturnsAHyphen() {
+        // Arrange
+        Cell cell = new Cell(false);
+
+        // Act
+        String actual = cell.toString();
+
+        // Assert
+        assertEquals("-", actual);
     }
 }
