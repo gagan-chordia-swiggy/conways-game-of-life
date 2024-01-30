@@ -9,7 +9,7 @@ class BoardTest {
     @Test
     void testBoardIsCreated() {
         // Arrange & Act
-        Board board = new Board(12, 2, 0.9);
+        Board board = new Board(12, 2);
 
         // Assert
         assertNotNull(board);
@@ -18,24 +18,24 @@ class BoardTest {
     @Test
     void testBoardWithNegativeRowsThrowsException() {
         // Assert
-        assertThrows(InvalidDimensionException.class, () -> new Board(-1, 2, 0.9));
+        assertThrows(InvalidDimensionException.class, () -> new Board(-1, 2));
     }
 
     @Test
     void testBoardWithZeroRowsThrowsException() {
         // Assert
-        assertThrows(InvalidDimensionException.class, () -> new Board(0, 2, 0.9));
+        assertThrows(InvalidDimensionException.class, () -> new Board(0, 2));
     }
 
     @Test
     void testBoardWithNegativeColumnsThrowsException() {
         // Assert
-        assertThrows(InvalidDimensionException.class, () -> new Board(1, -2, 0.9));
+        assertThrows(InvalidDimensionException.class, () -> new Board(1, -2));
     }
 
     @Test
     void testBoardWithZeroColumnsThrowsException() {
         // Assert
-        assertThrows(InvalidDimensionException.class, () -> new Board(9, 0, 0.9));
+        assertThrows(InvalidDimensionException.class, () -> new Board(9, 0));
     }
 }
