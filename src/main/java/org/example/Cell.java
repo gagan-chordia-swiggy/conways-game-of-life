@@ -6,4 +6,8 @@ public class Cell {
     public Cell(boolean isAlive) {
         this.isAlive = isAlive;
     }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
 }

@@ -13,4 +13,28 @@ class CellTest {
         // Assert
         assertNotNull(cell);
     }
+
+    @Test
+    void testDeadCellIsCreated() {
+        // Arrange
+        Cell cell = new Cell(false);
+
+        // Act
+        boolean actual = cell.isAlive();
+
+        // Assert
+        assertFalse(actual);
+    }
+
+    @Test
+    void testLiveCellIsCreated() {
+        // Arrange
+        Cell cell = new Cell(true);
+
+        // Act
+        boolean actual = cell.isAlive();
+
+        // Assert
+        assertTrue(actual);
+    }
 }
