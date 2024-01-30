@@ -26,6 +26,14 @@ public class Cells {
         this.seedCells(seedPercent);
     }
 
+    public void displayCells() {
+        for (int ii = 0; ii < this.rows; ii++) {
+            for (int jj = 0; jj < this.columns; jj++) {
+                System.out.println(" | " + this.cells[ii][jj].toString() + " | ");
+            }
+        }
+    }
+
     public void evolve() {
         Cell[][] nextCells = new Cell[this.rows][this.columns];
 
