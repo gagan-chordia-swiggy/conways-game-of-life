@@ -26,6 +26,20 @@ public class Cells {
         this.seedCells(seedPercent);
     }
 
+    public void evolve() {
+        Cell[][] nextCells = new Cell[this.rows][this.columns];
+
+        for (int ii = 0; ii < this.rows; ii++) {
+            for (int jj = 0; jj < this.columns; jj++) {
+                int liveNeighbours = countLiveNeighbours(ii, jj);
+                nextCells[ii][jj] = new Cell(this.cells[ii][jj].isAlive());
+                nextCells[ii][jj].determineState(liveNeighbours);
+            }
+        }
+
+        this.cells = nextCells;
+    }
+
     private void seedCells(double seedPercent) {
         Random random = new Random();
 
