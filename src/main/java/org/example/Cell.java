@@ -13,7 +13,7 @@ public class Cell {
 
     public void determineState(int liveNeighbours) {
         if (isAlive) {
-            isAlive = liveNeighbours == 2;
+            isAlive = liveNeighbours == 2 || liveNeighbours == 3;
         }
     }
 }
