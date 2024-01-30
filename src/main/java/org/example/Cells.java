@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.exceptions.InvalidDimensionException;
+import org.example.exceptions.InvalidSeedingException;
 
 import java.util.Random;
 
@@ -12,6 +13,10 @@ public class Cells {
     public Cells(int rows, int columns, double seedPercent) {
         if (rows < 1 || columns < 1) {
             throw new InvalidDimensionException();
+        }
+
+        if (seedPercent < 0.01) {
+            throw new InvalidSeedingException();
         }
 
         this.rows = rows;

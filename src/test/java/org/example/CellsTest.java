@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.exceptions.InvalidDimensionException;
+import org.example.exceptions.InvalidSeedingException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -38,5 +39,17 @@ public class CellsTest {
     void testNegativeCellColumnsThrowsException() {
         // Assert
         assertThrows(InvalidDimensionException.class, () -> new Cells(4, -12, 0.9));
+    }
+
+    @Test
+    void testZeroSeedingThrowsException() {
+        // Assert
+        assertThrows(InvalidSeedingException.class, () -> new Cells(10, 10, 0));
+    }
+
+    @Test
+    void testNegativeSeedingThrowsException() {
+        // Assert
+        assertThrows(InvalidSeedingException.class, () -> new Cells(4, 12, -0.9));
     }
 }
