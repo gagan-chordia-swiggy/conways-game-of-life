@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.exceptions.InvalidLiveNeighboursException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -127,5 +128,16 @@ class CellTest {
 
         // Assert
         assertFalse(actual);
+    }
+
+    @Test
+    void testNegativeLiveNeighboursThrowException() {
+        // Arrange
+        Cell cell = new Cell(false);
+
+        // Act
+
+        // Assert
+        assertThrows(InvalidLiveNeighboursException.class, () -> cell.determineState(-9));
     }
 }

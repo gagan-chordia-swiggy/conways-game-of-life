@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.exceptions.InvalidLiveNeighboursException;
+
 public class Cell {
     private boolean isAlive;
 
@@ -12,6 +14,10 @@ public class Cell {
     }
 
     public void determineState(int liveNeighbours) {
+        if (liveNeighbours < 0) {
+            throw new InvalidLiveNeighboursException();
+        }
+
         if (isAlive) {
             isAlive = liveNeighbours == 2 || liveNeighbours == 3;
         } else {
