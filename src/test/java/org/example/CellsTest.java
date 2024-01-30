@@ -1,8 +1,10 @@
 package org.example;
 
+import org.example.exceptions.InvalidDimensionException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CellsTest {
     @Test
@@ -12,5 +14,17 @@ public class CellsTest {
 
         // Assert
         assertNotNull(cells);
+    }
+
+    @Test
+    void testZeroCellRowThrowsException() {
+        // Assert
+        assertThrows(InvalidDimensionException.class, () -> new Cells(0, 12, 0.9));
+    }
+
+    @Test
+    void testNegativeCellRowsThrowsException() {
+        // Assert
+        assertThrows(InvalidDimensionException.class, () -> new Cells(-4, 12, 0.9));
     }
 }

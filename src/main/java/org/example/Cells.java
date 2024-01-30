@@ -1,13 +1,19 @@
 package org.example;
 
+import org.example.exceptions.InvalidDimensionException;
+
 import java.util.Random;
 
 public class Cells {
     private final int rows;
     private final int columns;
-    private final Cell[][] cells;
+    private Cell[][] cells;
 
     public Cells(int rows, int columns, double seedPercent) {
+        if (rows < 1) {
+            throw new InvalidDimensionException();
+        }
+
         this.rows = rows;
         this.columns = columns;
         this.cells = new Cell[rows][columns];
