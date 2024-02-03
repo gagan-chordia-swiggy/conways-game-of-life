@@ -53,26 +53,20 @@ public class CellsTest {
     }
 
     @Test
-    void testAllCellsAreNotDead() {
-        // Arrange
-        Cells cells = new Cells(3, 3, 0.7);
+    void testUpdatingCellsNotEqualsPreviousCellState() {
+        // Act
+        Cells cells = new Cells(3, 3, 0.2);
+        Cell[][] updatedCells = {
+                {new Cell(true), new Cell(false), new Cell(true)},
+                {new Cell(false), new Cell(false), new Cell(false)},
+                {new Cell(true), new Cell(false), new Cell(true)}
+        };
 
         // Act
-        boolean actual = cells.allCellsDead();
+        cells.updateCells(updatedCells);
+        Cell[][] modifiedCells = cells.cells();
 
         // Assert
-        assertFalse(actual);
-    }
-
-    @Test
-    void testAllCellsAreDead() {
-        // Arrange
-        Cells cells = new Cells(3, 3, 0.01);
-
-        // Act
-        boolean actual = cells.allCellsDead();
-
-        // Assert
-        assertTrue(actual);
+        assertEquals(updatedCells, modifiedCells);
     }
 }

@@ -3,22 +3,23 @@ package org.example;
 import java.util.Random;
 
 public class Board {
-    private final Cells cells;
+    private final CellsService cellsService;
 
     public Board(int rows, int columns) {
         double seedPercent = new Random().nextDouble(0.1, 1);
-        this.cells = new Cells(rows, columns, seedPercent);
+        Cells cells = new Cells(rows, columns, seedPercent);
+        this.cellsService = new CellsService(cells);
     }
 
     public void displayBoard() {
-        this.cells.displayCells();
+        this.cellsService.displayCells();
     }
 
     public void evolve() {
-        this.cells.evolve();
+        this.cellsService.evolve();
     }
 
     public boolean checkAllCellsDead() {
-        return this.cells.allCellsDead();
+        return this.cellsService.allCellsDead();
     }
 }
