@@ -136,4 +136,49 @@ class CellTest {
         // Assert
         assertEquals("*", actual);
     }
+
+    @Test
+    void test2DeadCellsAreEqual() {
+        // Arrange
+        Cell cell1 = new Dead();
+        Cell cell2 = new Dead();
+
+        // Act
+        boolean actual1 = cell2.equals(cell1);
+        boolean actual2 = cell1.equals(cell2);
+
+        // Assert
+        assertTrue(actual1);
+        assertTrue(actual2);
+    }
+
+    @Test
+    void test2AliveCellsAreEqual() {
+        // Arrange
+        Cell cell1 = new Alive();
+        Cell cell2 = new Alive();
+
+        // Act
+        boolean actual1 = cell2.equals(cell1);
+        boolean actual2 = cell1.equals(cell2);
+
+        // Assert
+        assertTrue(actual1);
+        assertTrue(actual2);
+    }
+
+    @Test
+    void testAliveAndDeadCellsAreNotEqual() {
+        // Arrange
+        Cell cell1 = new Alive();
+        Cell cell2 = new Dead();
+
+        // Act
+        boolean actual1 = cell2.equals(cell1);
+        boolean actual2 = cell1.equals(cell2);
+
+        // Assert
+        assertFalse(actual1);
+        assertFalse(actual2);
+    }
 }

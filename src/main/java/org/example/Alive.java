@@ -16,4 +16,9 @@ public class Alive implements Cell {
     public String toString() {
         return "*";
     }
+
+    @Override
+    public boolean equals(Cell other) {
+        return other instanceof Alive;
+    }
 }
