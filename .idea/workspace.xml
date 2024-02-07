@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="27. Added tests to check if the cells evolve">
+    <list default="true" id="d5510ede-514b-4087-9d70-4b136998641d" name="Changes" comment="28. Split cell class to alive and dead classes and refactored implementation and tests accordingly.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cells.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cells.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CellsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CellsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,56 +55,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.BoardTest.executor": "Run",
-    "Gradle.BoardTest.testAllCellsAreDeadWhenSeedPercentIsZeroAndReturnTrue.executor": "Run",
-    "Gradle.BoardTest.testAtLeast1CellIsAliveWhenSeedPercentIsNotZero.executor": "Run",
-    "Gradle.BoardTest.testBoardIsCreated.executor": "Run",
-    "Gradle.BoardTest.testBoardWithNegative1RowThrowsException.executor": "Run",
-    "Gradle.BoardTest.testBoardWithNegativeRowsThrowsError.executor": "Run",
-    "Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor": "Run",
-    "Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor": "Run",
-    "Gradle.BoardTest.testSeedRandomPopulation.executor": "Run",
-    "Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException.executor": "Run",
-    "Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException.executor": "Run",
-    "Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException.executor": "Run",
-    "Gradle.BoardTest.testWhenSeedPercentLessThanZeroThrowsException.executor": "Run",
-    "Gradle.CellTest.executor": "Coverage",
-    "Gradle.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse.executor": "Run",
-    "Gradle.CellTest.testAliveCellValueIsStar.executor": "Run",
-    "Gradle.CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse.executor": "Run",
-    "Gradle.CellTest.testCellIsAlive.executor": "Run",
-    "Gradle.CellTest.testCellIsCreated.executor": "Run",
-    "Gradle.CellTest.testDeadCellHasValueHyphen.executor": "Run",
-    "Gradle.CellTest.testDeadCellReturnsAHyphen.executor": "Run",
-    "Gradle.CellTest.testDeadCellValueIsHyphen.executor": "Run",
-    "Gradle.CellTest.testLiveCellHasValueStar.executor": "Run",
-    "Gradle.CellTest.testLiveCellValueIsStar.executor": "Run",
-    "Gradle.CellTest.testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue.executor": "Run",
-    "Gradle.CellsServiceTest.executor": "Run",
-    "Gradle.CellsServiceTest.testAllCellsAreDead.executor": "Run",
-    "Gradle.CellsServiceTest.testAtLeastOneCellIsAlive.executor": "Run",
-    "Gradle.CellsServiceTest.testCellsAreEvolveBasedOnTheirNeighbours.executor": "Run",
-    "Gradle.CellsTest.executor": "Coverage",
-    "Gradle.CellsTest.testAllCellsAreDead.executor": "Run",
-    "Gradle.CellsTest.testAllCellsAreNotDead.executor": "Run",
-    "Gradle.CellsTest.testUpdatingCellsNotEqualsPreviousCellState.executor": "Run",
-    "Gradle.GameTest.executor": "Run",
-    "Gradle.GameTest.testGameIsNotNull.executor": "Run",
-    "Gradle.GameTest.testGameWithNoBoardThrowsException.executor": "Run",
-    "Gradle.Tests in 'org.example'.executor": "Coverage",
-    "Gradle.conways-game-of-life [:Main.main()].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/gagan.chordia_ftc/Desktop/bootcamp/conways-game-of-life",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.BoardTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testAllCellsAreDeadWhenSeedPercentIsZeroAndReturnTrue.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testAtLeast1CellIsAliveWhenSeedPercentIsNotZero.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testBoardIsCreated.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testBoardWithNegative1RowThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testBoardWithNegativeRowsThrowsError.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testBoardWithZeroColumnsThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testBoardWithZeroRowsThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testSeedRandomPopulation.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testSeedingCellsWithNegative1SeedPercentRateShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testSeedingCellsWithNegativePointZero5SeedPercentRateShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testSeedingCellsWithZeroSeedPercentRateShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BoardTest.testWhenSeedPercentLessThanZeroThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.CellTest.testAliveCellStateWith1AliveNeighbourChangesToDeadAndReturnFalse.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testAliveCellValueIsStar.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testAliveCellWith4AliveNeighborsChangesToDeadStateAndReturnsFalse.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testCellIsAlive.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testCellIsCreated.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testDeadCellHasValueHyphen.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testDeadCellReturnsAHyphen.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testDeadCellValueIsHyphen.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testLiveCellHasValueStar.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testLiveCellValueIsStar.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellTest.testTestCellHasChangedToAliveWith3NeighborsAroundAndReturnsTrue.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellsServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellsServiceTest.testAllCellsAreDead.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellsServiceTest.testAtLeastOneCellIsAlive.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellsServiceTest.testCellsAreEvolveBasedOnTheirNeighbours.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellsTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.CellsTest.testAllCellsAreDead.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellsTest.testAllCellsAreNotDead.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CellsTest.testUpdatingCellsNotEqualsPreviousCellState.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameTest.testGameIsNotNull.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameTest.testGameWithNoBoardThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'org.example'.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.conways-game-of-life [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gagan.chordia_ftc/Desktop/bootcamp/conways-game-of-life&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -227,8 +225,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.Tests in 'org.example'" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.CellsServiceTest.testCellsAreEvolveBasedOnTheirNeighbours" />
         <item itemvalue="Gradle.CellsServiceTest" />
         <item itemvalue="Gradle.CellsServiceTest.testAllCellsAreDead" />
@@ -428,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706970715818</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="28. Split cell class to alive and dead classes and refactored implementation and tests accordingly.">
+      <option name="closed" value="true" />
+      <created>1707275984077</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1707275984077</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,11 +471,12 @@
     <MESSAGE value="25. Removed all cells management code and shifted to CellsService class and updated test cases accordingly&#10;&#10;NOTE: CellsService test would be updated with next commit" />
     <MESSAGE value="26. Added tests to check if the cells are alive/dead" />
     <MESSAGE value="27. Added tests to check if the cells evolve" />
-    <option name="LAST_COMMIT_MESSAGE" value="27. Added tests to check if the cells evolve" />
+    <MESSAGE value="28. Split cell class to alive and dead classes and refactored implementation and tests accordingly." />
+    <option name="LAST_COMMIT_MESSAGE" value="28. Split cell class to alive and dead classes and refactored implementation and tests accordingly." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/conways_game_of_life$CellTest.ic" NAME="CellTest Coverage Results" MODIFIED="1706631874086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/conways_game_of_life$Tests_in__org_example_.ic" NAME="Tests in 'org.example' Coverage Results" MODIFIED="1706970552800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/conways_game_of_life$Tests_in__org_example_.ic" NAME="Tests in 'org.example' Coverage Results" MODIFIED="1707275791884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/conways_game_of_life$CellsTest.ic" NAME="CellsTest Coverage Results" MODIFIED="1706637009998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/conways_game_of_life$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1706345651083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/conways_game_of_life$LocationTest.ic" NAME="LocationTest Coverage Results" MODIFIED="1706547193741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

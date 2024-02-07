@@ -16,7 +16,7 @@ public class GameService {
         Board board = new Board(rows, columns);
 
         int iteration = 1;
-        while (!board.checkAllCellsDead()) {
+        while (!board.checkAllCellsDead() && !board.inSameState()) {
             System.out.println("Iteration: " + iteration);
 
             board.displayBoard();

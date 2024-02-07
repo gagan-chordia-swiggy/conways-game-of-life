@@ -63,4 +63,57 @@ public class CellsServiceTest {
         // Assert
         assertNotEquals(beforeEvolving, afterEvolving);
     }
+
+    @Test
+    void testCellsAreNotInSameStateWhenInitialized() {
+        // Arrange
+        Cells cells = new Cells(5, 5, 0.3);
+        CellsService service = new CellsService(cells);
+
+        // Act
+        boolean actual = service.inSameState();
+
+        // Assert
+        assertFalse(actual);
+    }
+
+    @Test
+    void testCellsAreInSameStateAfter2RoundsOfEvolving() {
+        // Arrange
+        Cell[][] cellMatrix = new Cell[][]{
+                {new Alive(), new Alive()},
+                {new Alive(), new Alive()}
+        };
+        Cells cells = mock(Cells.class);
+        CellsService service = new CellsService(cells);
+
+        // Act
+        when(cells.cells()).thenReturn(cellMatrix);
+        service.evolve();
+        service.evolve();
+        boolean actual = service.inSameState();
+
+        // Assert
+        assertTrue(actual);
+    }
+
+    @Test
+    void testCellsDoNotRemainInSameStateAfter2RoundsOfEvolving() {
+        // Arrange
+        Cell[][] cellMatrix = new Cell[][]{
+                {new Dead(), new Alive(), new Dead()},
+                {new Alive(), new Dead(), new Dead()}
+        };
+        Cells cells = mock(Cells.class);
+        CellsService service = new CellsService(cells);
+
+        // Act
+        when(cells.cells()).thenReturn(cellMatrix);
+        service.evolve();
+        service.evolve();
+        boolean actual = service.inSameState();
+
+        // Assert
+        assertFalse(actual);
+    }
 }

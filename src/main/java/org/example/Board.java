@@ -22,4 +22,8 @@ public class Board {
     public boolean checkAllCellsDead() {
         return this.cellsService.allCellsDead();
     }
+
+    public boolean inSameState() {
+        return this.cellsService.inSameState();
+    }
 }
