@@ -57,9 +57,9 @@ public class CellsTest {
         // Act
         Cells cells = new Cells(3, 3, 0.2);
         Cell[][] updatedCells = {
-                {new Cell(true), new Cell(false), new Cell(true)},
-                {new Cell(false), new Cell(false), new Cell(false)},
-                {new Cell(true), new Cell(false), new Cell(true)}
+                {new Alive(), new Dead(), new Alive()},
+                {new Dead(), new Dead(), new Dead()},
+                {new Alive(), new Dead(), new Alive()}
         };
 
         // Act

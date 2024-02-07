@@ -17,7 +17,7 @@ public class CellsServiceTest {
         CellsService service = new CellsService(cells);
         for (int ii = 0; ii < 3; ii++) {
             for (int jj = 0; jj < 3; jj++) {
-                cellMatrix[ii][jj] = new Cell(false);
+                cellMatrix[ii][jj] = new Dead();
             }
         }
 
@@ -37,7 +37,7 @@ public class CellsServiceTest {
         CellsService service = new CellsService(cells);
         for (int ii = 0; ii < 3; ii++) {
             for (int jj = 0; jj < 3; jj++) {
-                cellMatrix[ii][jj] = new Cell(true);
+                cellMatrix[ii][jj] = new Alive();
             }
         }
 

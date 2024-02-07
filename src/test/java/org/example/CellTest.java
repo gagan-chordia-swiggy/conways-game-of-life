@@ -6,134 +6,106 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CellTest {
-    @Test
-    void testCellIsCreated() {
-        // Arrange & Act
-        Cell cell = new Cell(false);
-
-        // Assert
-        assertNotNull(cell);
-    }
-
-    @Test
-    void testDeadCellIsCreated() {
-        // Arrange
-        Cell cell = new Cell(false);
-
-        // Act
-        boolean actual = cell.isAlive();
-
-        // Assert
-        assertFalse(actual);
-    }
-
-    @Test
-    void testLiveCellIsCreated() {
-        // Arrange
-        Cell cell = new Cell(true);
-
-        // Act
-        boolean actual = cell.isAlive();
-
-        // Assert
-        assertTrue(actual);
-    }
 
     @Test
     void testLiveCellWithLessThan2NeighboursDies() {
         // Arrange
-        Cell cell = new Cell(true);
+        Cell cell = new Alive();
 
         // Act
-        cell.determineState(1);
-        boolean actual = cell.isAlive();
+        Cell actual = cell.determineState(1);
 
         // Assert
-        assertFalse(actual);
+        assertInstanceOf(Dead.class, actual);
     }
 
     @Test
     void testLiveCellWithMoreThan3NeighboursDies() {
         // Arrange
-        Cell cell = new Cell(true);
+        Cell cell = new Alive();
 
         // Act
-        cell.determineState(5);
-        boolean actual = cell.isAlive();
+        Cell actual = cell.determineState(5);
 
         // Assert
-        assertFalse(actual);
+        assertInstanceOf(Dead.class, actual);
     }
 
     @Test
     void testLiveCellWithExactly2NeighbourLives() {
         // Arrange
-        Cell cell = new Cell(true);
+        Cell cell = new Alive();
 
         // Act
-        cell.determineState(2);
-        boolean actual = cell.isAlive();
+        Cell actual = cell.determineState(2);
 
         // Assert
-        assertTrue(actual);
+        assertInstanceOf(Alive.class, actual);
     }
 
     @Test
     void testLiveCellWithExactly3NeighbourLives() {
         // Arrange
-        Cell cell = new Cell(true);
+        Cell cell = new Alive();
 
         // Act
-        cell.determineState(3);
-        boolean actual = cell.isAlive();
+        Cell actual = cell.determineState(3);
 
         // Assert
-        assertTrue(actual);
+        assertInstanceOf(Alive.class, actual);
     }
 
     @Test
     void testDeadCellWithExactly3NeighborsComesToLife() {
         // Arrange
-        Cell cell = new Cell(false);
+        Cell cell = new Dead();
 
         // Act
-        cell.determineState(3);
-        boolean actual = cell.isAlive();
+        Cell actual = cell.determineState(3);
 
         // Assert
-        assertTrue(actual);
+        assertInstanceOf(Alive.class, actual);
     }
 
     @Test
-    void testDeadCellWithLessThan2NeighboursDies() {
+    void testDeadCellWithLessThan3NeighboursDies() {
         // Arrange
-        Cell cell = new Cell(false);
+        Cell cell = new Dead();
 
         // Act
-        cell.determineState(1);
-        boolean actual = cell.isAlive();
+        Cell actual = cell.determineState(2);
 
         // Assert
-        assertFalse(actual);
+        assertInstanceOf(Dead.class, actual);
     }
 
     @Test
     void testDeadCellWithMoreThan3NeighboursDies() {
         // Arrange
-        Cell cell = new Cell(false);
+        Cell cell = new Dead();
 
         // Act
-        cell.determineState(5);
-        boolean actual = cell.isAlive();
+        Cell actual = cell.determineState(4);
 
         // Assert
-        assertFalse(actual);
+        assertInstanceOf(Dead.class, actual);
     }
 
     @Test
-    void testNegativeLiveNeighboursThrowException() {
+    void testAliveCellNegativeLiveNeighboursThrowException() {
         // Arrange
-        Cell cell = new Cell(false);
+        Cell cell = new Alive();
+
+        // Act
+
+        // Assert
+        assertThrows(InvalidLiveNeighboursException.class, () -> cell.determineState(-9));
+    }
+
+    @Test
+    void testDeadCellNegativeLiveNeighboursThrowException() {
+        // Arrange
+        Cell cell = new Dead();
 
         // Act
 
@@ -144,7 +116,7 @@ class CellTest {
     @Test
     void testDeadCellHasValueHyphen() {
         // Arrange
-        Cell cell = new Cell(false);
+        Cell cell = new Dead();
 
         // Act
         String actual = cell.toString();
@@ -156,7 +128,7 @@ class CellTest {
     @Test
     void testLiveCellHasValueStar() {
         // Arrange
-        Cell cell = new Cell(true);
+        Cell cell = new Alive();
 
         // Act
         String actual = cell.toString();

@@ -22,7 +22,7 @@ public class CellsService {
 
         for (Cell[] matrix : cellMatrix) {
             for (Cell cell : matrix) {
-                if (cell.isAlive()) {
+                if (cell instanceof Alive) {
                     return false;
                 }
             }
@@ -41,8 +41,7 @@ public class CellsService {
         for (int ii = 0; ii < rows; ii++) {
             for (int jj = 0; jj < columns; jj++) {
                 int liveNeighbours = countLiveNeighbours(ii, jj);
-                nextCellsState[ii][jj] = new Cell(cellMatrix[ii][jj].isAlive());
-                nextCellsState[ii][jj].determineState(liveNeighbours);
+                nextCellsState[ii][jj] = cellMatrix[ii][jj].determineState(liveNeighbours);
             }
         }
 
@@ -51,6 +50,7 @@ public class CellsService {
 
     private int countLiveNeighbours(int row, int column) {
         int liveNeighbours = 0;
+
         Cell[][] cellMatrix = this.cells.cells();
         int rows = cellMatrix.length;
         int columns = cellMatrix[0].length;
@@ -63,7 +63,7 @@ public class CellsService {
             int neighbourColumn = column + neighbourColumns[ii];
 
             if (neighbourRow >= 0 && neighbourRow < rows && neighbourColumn >= 0 && neighbourColumn < columns) {
-                if (cellMatrix[neighbourRow][neighbourColumn].isAlive()) {
+                if (cellMatrix[neighbourRow][neighbourColumn] instanceof Alive) {
                     ++liveNeighbours;
                 }
             }

@@ -39,7 +39,11 @@ public class Cells {
 
         for (int ii = 0; ii < this.rows; ii++) {
             for (int jj = 0; jj < this.columns; jj++) {
-                this.cells[ii][jj] = new Cell(random.nextDouble(0, 1) < seedPercent);
+                if (random.nextDouble(0, 1) < seedPercent) {
+                    this.cells[ii][jj] = new Alive();
+                } else {
+                    this.cells[ii][jj] = new Dead();
+                }
             }
         }
     }
